@@ -56,42 +56,58 @@ nav .container-fluid .navbar-collapse button {
 
 /* container hero 1 end*/
 
+
+
+
+
+
 /* container hero 2 */
 .container-hero-2 {
     padding: 0 6%;
 
 }
 
-.container-hero-2 li {
-    list-style-type: none;
-
+.container-hero-2 h4 {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.container-hero-2 .row li a {
-    width: 170px;
+.container-hero-2 .buku1 .caption-button {
+    margin-top: 64px;
+    width: 210px;
+}
 
+.container-hero-2 .buku1 .cover img {
+    height: 200px;
+}
+
+.container-hero-2 .buku1 .caption-button button {
+    background-color: #FFCE1A;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-hero-2 .button-move button {
+    background-color: #FFCE1A;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* container hero 2 end*/
 
-/* container hero 3 */
+/* 3 */
 .container-hero-3 {
     padding: 0 6%;
-    height: 1000px;
+    margin-top: 110px;
 }
 
-.container-hero-3 .buku1 .caption-button {
-    margin-top: 80px;
-    width: 210px;
-}
-
-.container-hero-3 .buku1 .cover img {
-    height: 200px;
-}
-
-.container-hero-3 .buku1 .caption-button button {
+.container-hero-3 .row {
     background-color: #FFCE1A;
-    color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* container hero 3 end */
+.container-hero-3 .row .col a {
+    text-decoration: none;
+    color: #212529;
+}
+
+/* 3 */
