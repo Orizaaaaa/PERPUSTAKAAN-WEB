@@ -94,7 +94,7 @@ nav .container-fluid .navbar-collapse button {
 
 /* container hero 2 end*/
 
-/* 3 */
+/*container hero 3 */
 .container-hero-3 {
     padding: 0 6%;
     margin-top: 110px;
@@ -110,4 +110,46 @@ nav .container-fluid .navbar-collapse button {
     color: #212529;
 }
 
-/* 3 */
+/* container hero 3 end*/
+
+/* responsive Breakpoint */
+
+@media screen and (max-width:1200px) {}
+
+@media screen and (max-width:992px) {
+    .container-hero-1 .row .col:nth-child(2) {
+        order: -1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-hero-2 h4 {
+        margin-top: 20px;
+    }
+
+    .container-hero-3 .row .col:nth-child(3) {
+        margin-top: 20px;
+
+    }
+}
+
+@media screen and (max-width:768px) {
+    .container-hero-2 .button-move button img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .container-hero-2 .button-move button {
+        font-size: 10px;
+        padding: 10 20px;
+    }
+
+    .container-hero-1 .col:nth-child(2) img {
+        height: 280px;
+        width: 430px;
+
+    }
+
+
+}
