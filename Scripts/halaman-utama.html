@@ -23,8 +23,8 @@
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid ">
       <a class="navbar-brand fw-bold" href="#">Noobies Book.</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
@@ -38,10 +38,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item me-4">
-            <a class="nav-link" href="#">Recomended</a>
+            <a class="nav-link" href="#rekomended">Recomended</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Book</a>
+            <a class="nav-link" href="/Scripts/halaman-buku.html">Book</a>
           </li>
         </ul>
         <button class="btn">Log Out</button>
@@ -60,7 +60,7 @@
           into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
           something that will captivate every reader's interest.
         </p>
-        <button class="btn mt-4">Booking Sekarang</button>
+        <a href="/Scripts/halaman-buku.html"> <button class="btn mt-4">Booking Now </button></a>
       </div>
       <div class="col">
         <img src="../Assets/Animation.svg" alt="" />
@@ -70,7 +70,7 @@
   <!-- Hero 1 -->
 
   <!-- hero 2 -->
-  <section class="container-hero-2">
+  <section class="container-hero-2" id="rekomended">
     <h4 class="fw-semibold ">Recomended For You </h4>
     <div class="caraosel d-flex ">
 
@@ -80,48 +80,58 @@
         </div>
         <div class="caption-button ">
           <h6>The Time Has Come</h6>
-          <p>Lindbergh's Pharmacy is an Athens, Georgia, institution...</p>
-          <button class="btn fw-semibold mt-2"> Choose Book</button>
+          <p>Lindbergh's Pharmacy is an Athens...</p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choose
+            Book</button>
         </div>
       </div>
+
       <div class="buku1 d-flex mt-2 gap-3">
         <div class="cover">
           <img src="../Assets/Product photo (1).svg">
         </div>
         <div class="caption-button  ">
-          <h6>I Want a Better Cata...</h6>
-          <p>With global warming projected to rocket past the...</p>
-          <button class="btn fw-semibold mt-2"> Choose Book</button>
+          <h6>I Want a Catastsrope</h6>
+          <p>With global warming projected ...</p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+            Book</button>
         </div>
       </div>
+
       <div class="buku1 d-flex mt-2 gap-3">
         <div class="cover">
           <img src="../Assets/Product photo (2).svg">
         </div>
         <div class="caption-button  ">
           <h6>My Goverment</h6>
-          <p>Pharmacy is an Athens, Georgia, institution...</p>
-          <button class="btn fw-semibold mt-2"> Choose Book</button>
+          <p>Pharmacy is an Athens, institution...</p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+            Book</button>
         </div>
       </div>
+
       <div class="buku1 d-flex mt-2 gap-3">
         <div class="cover">
           <img src="../Assets/buku3.svg">
         </div>
         <div class="caption-button  ">
-          <h6>Forget a Mentor, Find...</h6>
-          <p>In this powerful yet practical book, economist and...</p>
-          <button class="btn fw-semibold mt-2"> Choose Book</button>
+          <h6>Forget a Mentor</h6>
+          <p>In this powerful yet practical and...</p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+            Book</button>
         </div>
       </div>
+
       <div class="buku1 d-flex mt-2 gap-3">
         <div class="cover">
           <img src="../Assets/buku4.svg">
         </div>
         <div class="caption-button  ">
           <h6>Pride and Protest</h6>
-          <p>A woman goes head-to-head with the CEO of...</p>
-          <button class="btn fw-semibold mt-2"> Choose Book</button>
+          <p>A woman goes head-to-head CEO of...</p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+            Book</button>
         </div>
       </div>
 
@@ -134,7 +144,28 @@
   </section>
   <!-- hero 2 end -->
 
-
+  <!-- Popup -->
+  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <label for="exampleDataList" class="form-label">Masukan data kamu </label>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Masukan Nama">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--popup end  -->
 
   <!-- hero 3 -->
   <section class="container-hero-3">
