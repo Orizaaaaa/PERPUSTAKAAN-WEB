@@ -52,6 +52,29 @@ nav .container-fluid .navbar-collapse button {
 .halaman-buku .container .row .col img {
     width: 200px;
     height: 290px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
 
 /* halaman buku end */
+
+
+/* responsive */
+@media screen and (max-width:576px) {
+    .halaman-buku .container .row .col img {
+        width: 160px;
+        height: 250px;
+    }
+
+    .halaman-buku .container .row .col {
+        font-size: 12px;
+    }
+}
+
+/* responsive end*/
+
+/* Extra small (xs): Ukuran layar dengan lebar kurang dari 576 piksel.
+Small (sm): Ukuran layar dengan lebar antara 576 piksel dan 768 piksel.
+Medium (md): Ukuran layar dengan lebar antara 768 piksel dan 992 piksel.
+Large (lg): Ukuran layar dengan lebar antara 992 piksel dan 1200 piksel. */
