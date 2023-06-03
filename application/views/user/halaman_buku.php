@@ -31,7 +31,7 @@
                         <a class="nav-link " aria-current="page" href="<?php echo site_url('halaman_utama') ?>">Home</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link " href="#">Recomended</a>
+                        <a class="nav-link " href="#recomended">Recomended</a>
                     </li>
                     <li class="nav-item me-4">
                         <a class="nav-link active" href="<?php echo site_url('halaman_buku') ?>">Book</a>
@@ -56,7 +56,7 @@
             <lottie-player class=" lottiefiles mx-auto"
                 src="https://assets1.lottiefiles.com/packages/lf20_eq9hnyso.json" background="transparent" speed="1"
                 loop autoplay></lottie-player>
-            <input type="text" id="filter" class=" input form-control form-control-lg shadow-none"
+            <input type="text" id="recomended" class=" input form-control form-control-lg shadow-none"
                 placeholder="Search Book...">
 
 

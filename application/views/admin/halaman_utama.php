@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beranda</title>
+  <title>Admin | Beranda</title>
   <link rel="stylesheet" href="<?php echo base_url();?>assets/Style/halaman-utama.css" />
 
 
@@ -27,7 +27,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid ">
-      <a class="navbar-brand fw-bold" href="<?php echo site_url('halaman_utama') ?>">Noobies Book</a>
+      <a class="navbar-brand fw-bold" href="<?php echo site_url('halaman_utama') ?>">Noobies Book <b style="color:aqua" >ADMIN+</b></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,8 +67,9 @@
           into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
           something that will captivate every reader's interest.
         </p>
-        <a href="<?php echo site_url('halaman_buku') ?>"> <button class="btn mt-4">Booking Now </button></a>
-      </div>
+        <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#update_buku">
+            Update Buku Terbaru Minggu ini</button>
+     </div>
       <div class="col">
         <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
       </div>
@@ -146,7 +147,7 @@
     </div>
 
     <div class="button-move d-flex justify-content-center mt-5">
-      <a href="<?php echo site_url('halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Show More <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
+      <a href="<?php echo site_url('halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Update Rekomendasi Buku <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
       </button>
     </div>
   </section>
@@ -169,6 +170,29 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Confirm Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--popup end  -->
+
+  <!-- Popup update buku terbaru minggu ini-->
+  <div class="modal fade " id="update_buku" tabindex="-1" aria-labelledby="update_bukuLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Update Buku Gambar Buku terbaru</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <label for="exampleDataList" class="form-label">Pilih Gambar </label>
+            <input type="file" class="form-control" id="inputGroupFile01">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Confirm</button>
         </div>
       </div>
     </div>
