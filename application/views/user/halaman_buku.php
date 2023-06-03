@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Buku</title>
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/Style/halaman-buku.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/style/halaman-buku.css">
     <!-- bootsrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
@@ -37,7 +37,7 @@
                         <a class="nav-link active" href="<?php echo site_url('halaman_buku') ?>">Book</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">History</a>
+                        <a class="nav-link" href="<?php echo site_url('history') ?>">History</a>
                     </li>
                 </ul>
                 <a href="<?php echo site_url('awal_akses') ?>"style="color: white;" onclick="return confirm('Apakah Anda yakin akan Logout?');">
