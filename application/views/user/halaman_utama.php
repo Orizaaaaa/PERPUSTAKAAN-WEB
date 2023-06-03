@@ -11,7 +11,9 @@
 
 
   <!-- slick -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/slick-1.8.1/slick/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- slick end-->
 
 
@@ -60,7 +62,7 @@
           into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
           something that will captivate every reader's interest.
         </p>
-        <a href="/Scripts/halaman-buku.html"> <button class="btn mt-4">Booking Now </button></a>
+        <a href="<?php echo site_url('halaman_buku') ?>"> <button class="btn mt-4">Booking Now </button></a>
       </div>
       <div class="col">
         <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
@@ -199,11 +201,12 @@
 
 
   <!-- slick -->
-  <script src="/Assets/slick-1.8.1/slick/slick.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="/Scripts/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </script>
+  <!-- initialize jQuery Library -->
+  <script src="<?php echo base_url();?>assets/slick/jquery/jquery.js"></script>
+  <script src="<?php echo base_url();?>assets/slick/slick-carousel/slick.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/custom.js"></script>
+  </script>
   <!-- slick end -->
 
   <!-- bootsrap js -->
