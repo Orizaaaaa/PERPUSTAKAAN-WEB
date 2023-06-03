@@ -46,7 +46,9 @@
             <a class="nav-link" href="<?php echo site_url('halaman_buku') ?>">Book</a>
           </li>
         </ul>
+        <a href="<?php echo site_url('awal_akses') ?>"style="color: white;" onclick="return confirm('Apakah Anda yakin akan Logout?');">
         <button class="btn">Log Out</button>
+        </a> 
       </div>
     </div>
   </nav>
@@ -141,7 +143,8 @@
     </div>
 
     <div class="button-move d-flex justify-content-center mt-5">
-      <button class="btn fw-semibold w-25 "> Show More <img src="<?php echo base_url();?>assets/arrow-right.png"></button>
+      <a href="<?php echo site_url('halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Show More <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
+      </button>
     </div>
   </section>
   <!-- hero 2 end -->

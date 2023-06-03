@@ -41,7 +41,9 @@
                         <a class="nav-link" href="#footer">About Us</a>
                     </li>
                 </ul>
+                <a href="<?php echo site_url('login') ?>" style="color: white;">
                 <button class="btn fw-semibold">Login</button>
+                </a>
             </div>
         </div>
     </nav>
@@ -58,7 +60,9 @@
                     service, you can indulge in captivating stories without the hassle of long queues. Join us now and
                     embark on a boundless reading adventure!
                 </p>
+                <a href="<?php echo site_url('register') ?>" style="color: white;">
                 <button class="btn mt-4">Register Now</button>
+                </a>
             </div>
             <div class="col">
                 <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
