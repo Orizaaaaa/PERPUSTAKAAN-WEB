@@ -27,7 +27,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg ">
     <div class="container-fluid ">
-      <a class="navbar-brand fw-bold" href="<?php echo site_url('halaman_utama') ?>">Noobies Book <b style="color:aqua" >ADMIN+</b></a>
+      <a class="navbar-brand fw-bold" href="<?php echo site_url('admin_halaman_utama') ?>">Noobies Book <b style="color:aqua" >ADMIN+</b></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,16 +37,16 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex fw-semibold">
           <li class="nav-item me-4">
-            <a class="nav-link active" aria-current="page" href="<?php echo site_url('halaman_utama') ?>">Home</a>
+            <a class="nav-link active" aria-current="page" href="<?php echo site_url('admin_halaman_utama') ?>">Home</a>
           </li>
           <li class="nav-item me-4">
             <a class="nav-link" href="#rekomended">Recomended</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('halaman_buku') ?>">Book</a>
+            <a class="nav-link" href="<?php echo site_url('admin_halaman_buku') ?>">Book</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('history') ?>"> History</a>
+            <a class="nav-link" href="<?php echo site_url('admin_history') ?>"> History</a>
           </li>
         </ul>
         <a href="<?php echo site_url('awal_akses') ?>"style="color: white;" onclick="return confirm('Apakah Anda yakin akan Logout?');">
@@ -67,8 +67,9 @@
           into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
           something that will captivate every reader's interest.
         </p>
-        <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#update_buku">
-            Update Buku Terbaru Minggu ini</button>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#update_buku">
+            Update Buku Terbaru Minggu ini
+          </button>
      </div>
       <div class="col">
         <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
@@ -147,8 +148,8 @@
     </div>
 
     <div class="button-move d-flex justify-content-center mt-5">
-      <a href="<?php echo site_url('halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Update Rekomendasi Buku <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
-      </button>
+      <a href="<?php echo site_url('admin_halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Update Rekomendasi Buku <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
+      </button> </a>
     </div>
   </section>
   <!-- hero 2 end -->
