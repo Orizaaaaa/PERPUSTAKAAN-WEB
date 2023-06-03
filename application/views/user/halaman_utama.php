@@ -141,7 +141,7 @@
     </div>
 
     <div class="button-move d-flex justify-content-center mt-5">
-      <button class="btn fw-semibold w-25 "> Show More <img src=" /Assets/arrow-right.png"></button>
+      <button class="btn fw-semibold w-25 "> Show More <img src="<?php echo base_url();?>assets/arrow-right.png"></button>
     </div>
   </section>
   <!-- hero 2 end -->
