@@ -22,6 +22,16 @@
 </style>
 
 <body>
+
+            <?php 
+				if($this->session->flashdata('error') !='')
+				{
+					echo '<div class="alert alert-danger" role="alert">';
+					echo $this->session->flashdata('error');
+					echo '</div>';
+				}
+				?>
+
   <div class="container">
     <div class="card login-form">
       <div class="card-body ">
@@ -30,28 +40,33 @@
 
        
 
-        <form>
+        <form method="post" action="<?php echo base_url(); ?>index.php/register/proses">
 
           <!--  -->
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Full name</label>
+            <label for="exampleInputEmail1" class="form-label">Email*</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Your Name" required>
+              placeholder="Your Email" name="email"required>
           </div>
 
-
-
-          <div class="mb-4">
-            <label for="exampleInputEmail1" class="form-label">username*</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Your username" required>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username*</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Your Username" name="username"required>
           </div>
+
+        
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password*</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Min 8 Character"
-              required>
+            name="password" required>
           </div>
 
+          <div class="mb-3">
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Min 8 Character"
+            name="level" hidden value="2">
+          </div>
+            
           <div class="d-flex justify-content-between">
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">

@@ -49,7 +49,7 @@
             <a class="nav-link" href="<?php echo site_url('admin_history') ?>"> History</a>
           </li>
         </ul>
-        <a href="<?php echo site_url('awal_akses') ?>"style="color: white;" onclick="return confirm('Apakah Anda yakin akan Logout?');">
+        <a href="<?php echo site_url('login/logout') ?>"style="color: white;" onclick="return confirm('Apakah Anda yakin akan Logout?');">
         <button class="btn">Log Out</button>
         </a> 
       </div>

@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth_m extends CI_Model{
+class login_m extends CI_Model{
 
 	function cek_user($username,$password)
 	{
@@ -13,7 +13,7 @@ class Auth_m extends CI_Model{
 		);
 
 		$this->db->select('*');
-		$this->db->from('user');
+		$this->db->from('user');	
 		$this->db->where($kondisi);
 		$this->db->limit(1);
 		return $this->db->get();
