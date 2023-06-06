@@ -56,6 +56,12 @@
     </div>
   </nav>
   <!-- Navbar End-->
+    <br>
+  <center>
+     <?php echo $this->session->flashdata('notif') ?>
+  </center>
+
+  
 
   <!-- Hero 1 -->
   <?php  $no = 1; foreach($buku_terbaru as $bt){  ?>

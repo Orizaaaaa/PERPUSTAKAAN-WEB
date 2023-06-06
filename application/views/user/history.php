@@ -47,44 +47,38 @@
         </div>
     </nav>
     <!-- Navbar End-->
-    <section class="history-peminjaman mt-5">
+    <section class="history-peminjaman mt-5">    
 
-        <table class="table table-dark table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Must Be Returned</th>
-                    <th scope="col">Return The Book</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Filosofi Teras</td>
-                    <td>04 / 06 / 2023</td>
 
-                    <td><a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Return
-                            Now</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>React.js</td>
-                    <td>04 / 06 / 2023</td>
-                    <td><a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Return
-                            Now</a></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Clean Code</td>
-                    <td>04 / 06 / 2023</td>
-                    <td><a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Return
-                            Now</a></td>
-                </tr>
-            </tbody>
-        </table>
+<center>
+    <h1>History Peminjaman</h1>
+</center>
+<?php  $no = 1; foreach($history as $h){  ?>
+<section class="history-peminjaman mt-5">
 
-    </section>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Judul Buku</th>
+                <th scope="col">Dipinjam Pada Tanggal</th>
+                <th scope="col">Dikembalikan Pada Tanggal</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><?php echo $h->no?></th>
+                <td><?php echo $h->judul_buku?></td>
+                <td><?php echo $h->dipinjam_pada_tanggal?></td>
+                <td><?php echo $h->dikembalikan_pada_tanggal?></td>
+                <td><?php echo $h->status?></td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+<?php } ?> 
 
     <!-- popup modal  -->
 

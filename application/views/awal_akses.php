@@ -50,26 +50,26 @@
     <!-- Navbar End-->
 
     <!-- Hero 1 -->
+    <?php  $no = 1; foreach($buku_terbaru as $bt){  ?>
     <section class="container-hero-1 mt-5">
         <div class="row">
             <div class="col mt-4">
-                <h2>Welcome To Noobies Book </h2>
+                <h2><?php echo $bt->judul_buku_terbaru?></h2>
                 <p class="w-100 mt-4">
-                    The best platform to quench your thirst for literacy! Enjoy an unlimited
-                    reading experience with access to a comprehensive collection of books. With our digital library
-                    service, you can indulge in captivating stories without the hassle of long queues. Join us now and
-                    embark on a boundless reading adventure!
+                <?php echo $bt->caption_buku_terbaru?>
                 </p>
                 <a href="<?php echo site_url('register') ?>" style="color: white;">
                 <button class="btn mt-4">Register Now</button>
                 </a>
             </div>
             <div class="col">
-                <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
+                <img src="<?php echo base_url();?>assets/buku_terbaru/<?php echo $bt->gambar_buku ?>" alt="" />
             </div>
         </div>
     </section>
+    <?php } ?> 
     <!-- Hero 1 -->
+    
 
 
 

@@ -53,6 +53,15 @@ class admin_halaman_utama extends CI_Controller {
                 'id_buku' => $id_buku
             );
             $this->buku_terbaru_m->update_data($where,$data,'buku_terbaru');
+            $this->session->set_flashdata('notif',' <div class="row">
+        <div class="container">
+            <div class="col-md-6">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Selamat!</strong> Data Berhasil Di Perbaharui!!!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+            </div>
+    </div>');
             redirect('admin_halaman_utama');
         }
     
@@ -184,6 +193,15 @@ class admin_halaman_utama extends CI_Controller {
             'id_rekomendasi' => $id_rekomendasi
         );
         $this->rekomendasi_buku->update_data($where,$data,'rekomendasi_buku');
+        $this->session->set_flashdata('notif',' <div class="row">
+      <div class="container">
+        <div class="col-md-6">
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Selamat!</strong> Data Berhasil Di Perbaharui!!!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        </div>
+    </div>');
         redirect('admin_halaman_utama');
     }
 
