@@ -58,101 +58,258 @@
   <!-- Navbar End-->
 
   <!-- Hero 1 -->
+  <?php  $no = 1; foreach($buku_terbaru as $bt){  ?>
   <section class="container-hero-1 mt-5 mx-auto">
     <div class="row d-flex align-items-center row-cols-lg-2 row-cols-1 ">
       <div class="col mt-4 ">
-        <h2>New Releases This Week</h2>
+        <h2><?php echo $bt->judul_buku_terbaru?></h2>
         <p class="w-100 mt-4">
-          The new releases this week offer a variety of literary adventures. Whether you're looking for an escape
-          into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
-          something that will captivate every reader's interest.
+        <?php echo $bt->caption_buku_terbaru?>
         </p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#update_buku">
-            Update Buku Terbaru Minggu ini
-          </button>
+          
      </div>
       <div class="col">
-        <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
+        <img src="<?php echo base_url();?>assets/buku_terbaru/<?php echo $bt->gambar_buku ?>" alt="" />
       </div>
     </div>
   </section>
+  
+  
+     <br>  <br>  
+    <center>
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update<?php echo $bt->id_buku ?>" style="color:white" >
+            Update Buku Terbaru Minggu ini  
+          </button> 
+          </center> <br>  <br>  
   <!-- Hero 1 -->
 
+  <!-- Popup update buku terbaru minggu ini-->
+  <div class="modal fade " id="update<?php echo $bt->id_buku ?>" tabindex="-1" aria-labelledby="update_bukuLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Update Buku Terbaru Minggu Ini</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <?php echo form_open_multipart('admin_halaman_utama/update') ?>
+          <form action="<?php echo base_url('admin_halaman_utama/update'); ?>" method="post">
+
+          <div class="mb-2">
+                    <input type="text" class="form-control" name="id_buku" id="exampleInputNim" required value="<?php echo $bt->id_buku?>" hidden>
+           </div>
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku Terbaru</label>
+                    <input type="text" class="form-control" name="judul_buku_terbaru" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Caption Untuk Buku Terbaru </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="caption_buku_terbaru" required></textarea>
+           </div>
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku Terbaru</label>
+                    <input type="file" class="form-control" name="gambar_buku" id="exampleInputNim" required>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah Anda yakin akan Memperbaharui Buku Terbaru Minggu ini?');">Confirm</button>
+          <?php echo form_close(); ?>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?> 
+  <!--popup end  -->
+
+
   <!-- hero 2 -->
+  <?php  $no = 1; foreach($rekomendasi_buku as $rb){  ?>
+
   <section class="container-hero-2" id="rekomended">
     <h4 class="fw-semibold ">Recomended For You </h4>
     <div class="caraosel d-flex ">
 
       <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_1 ?>">
         </div>
         <div class="caption-button ">
-          <h6>The Time Has Come</h6>
-          <p>Lindbergh's Pharmacy is an Athens...</p>
+          <h6><?php echo $rb->judul_buku_1?></h6>
+          <p><?php echo $rb->keterangan_buku_1?></p>
           <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo (1).svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_2 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>I Want a Catastsrope</h6>
-          <p>With global warming projected ...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_2?></h6>
+          <p><?php echo $rb->keterangan_buku_2?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo (2).svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_3 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>My Goverment</h6>
-          <p>Pharmacy is an Athens, institution...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_3?></h6>
+          <p><?php echo $rb->keterangan_buku_3?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/buku3.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_4 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>Forget a Mentor</h6>
-          <p>In this powerful yet practical and...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_4?></h6>
+          <p><?php echo $rb->keterangan_buku_4?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/buku4.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_5 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>Pride and Protest</h6>
-          <p>A woman goes head-to-head CEO of...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_5?></h6>
+          <p><?php echo $rb->keterangan_buku_5?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choose
             Book</button>
         </div>
       </div>
 
 
     </div>
-
-    <div class="button-move d-flex justify-content-center mt-5">
-      <a href="<?php echo site_url('admin_halaman_buku') ?>" style="color: white;"><button class="btn fw-semibold w-25 "> Update Rekomendasi Buku <img src="<?php echo base_url();?>assets/arrow-right.png"></a>
-      </button> </a>
     </div>
-  </section>
+  </section> <br> <br>
+
+  <center>
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#update_rekomendasi_buku<?php echo $rb->id_rekomendasi?>" style="color:white" >
+            Update Rekomendasi Buku Minggu ini  
+          </button> 
+          </center>
+   
   <!-- hero 2 end -->
+
+  <!-- Popup update Rekomendasi minggu ini-->
+  <div class="modal fade " id="update_rekomendasi_buku<?php echo $rb->id_rekomendasi ?>" tabindex="-1" aria-labelledby="update_bukuLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Update Rekomendasi Buku Minggu Ini</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <?php echo form_open_multipart('admin_halaman_utama/update_rekomendasi_buku') ?>
+          <form action="<?php echo base_url('admin_halaman_utama/update_rekomendasi_buku'); ?>" method="post">
+
+          <div class="mb-2">
+                    <input type="text" class="form-control" name="id_rekomendasi" id="exampleInputNim" required value="<?php echo $rb->id_rekomendasi?>" hidden>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku 1</label>
+                    <input type="file" class="form-control" name="gambar_buku_1" id="exampleInputNim" required>
+           </div>
+           
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku 1</label>
+                    <input type="text" class="form-control" name="judul_buku_1" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Keterangan Untuk Buku 1 </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan_buku_1"></textarea>
+           </div>
+
+           <hr>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku 2</label>
+                    <input type="file" class="form-control" name="gambar_buku_2" id="exampleInputNim" required>
+           </div>
+           
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku 2</label>
+                    <input type="text" class="form-control" name="judul_buku_2" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Keterangan Untuk Buku 2 </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan_buku_2"></textarea>
+           </div>
+
+           <hr> 
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku 3</label>
+                    <input type="file" class="form-control" name="gambar_buku_3" id="exampleInputNim" required>
+           </div>
+           
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku 3</label>
+                    <input type="text" class="form-control" name="judul_buku_3" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Keterangan Untuk Buku 3 </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan_buku_3"></textarea>
+           </div>
+
+           <hr>
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku 4</label>
+                    <input type="file" class="form-control" name="gambar_buku_4" id="exampleInputNim" required>
+           </div>
+           
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku 4</label>
+                    <input type="text" class="form-control" name="judul_buku_4" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Keterangan Untuk Buku 4 </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan_buku_4"></textarea>
+           </div>
+           <hr>
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Gambar Buku 5</label>
+                    <input type="file" class="form-control" name="gambar_buku_5" id="exampleInputNim" required>
+           </div>
+           
+          <div class="mb-2">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Judul Untuk Buku 5</label>
+                    <input type="text" class="form-control" name="judul_buku_5" id="exampleInputNim" required>
+           </div>
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Keterangan Untuk Buku 5 </label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan_buku_5"></textarea>
+           </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Apakah Anda yakin akan Memperbaharui Rekomendasi Buku Minggu ini?');">Confirm</button>
+          <?php echo form_close(); ?>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php } ?>
+  <!--popup end  -->
 
   <!-- Popup -->
   <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -177,28 +334,7 @@
   </div>
   <!--popup end  -->
 
-  <!-- Popup update buku terbaru minggu ini-->
-  <div class="modal fade " id="update_buku" tabindex="-1" aria-labelledby="update_bukuLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5">Update Buku Gambar Buku terbaru</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <label for="exampleDataList" class="form-label">Pilih Gambar </label>
-            <input type="file" class="form-control" id="inputGroupFile01">
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Confirm</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--popup end  -->
+  
 
   <!-- hero 3 -->
   <section class="container-hero-3">
