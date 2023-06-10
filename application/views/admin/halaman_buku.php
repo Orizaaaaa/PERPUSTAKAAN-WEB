@@ -176,7 +176,7 @@
 
            <div class="mb-2">
            <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Tahun Terbit</label>
-                    <input type="number" class="form-control" name="tahun_terbit" id="exampleInputNim" placeholder="<?php echo $b->tahun_terbit?>" required>
+                    <input type="text" class="form-control" name="tahun_terbit" id="exampleInputNim" placeholder="<?php echo $b->tahun_terbit?>" required>
            </div>
 
            <div class="mb-2">
@@ -186,12 +186,12 @@
 
            <div class="mb-2">
            <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Masukan Jumlah Halaman</label>
-                    <input type="number" class="form-control" name="jumlah_halaman" id="exampleInputNim" placeholder="<?php echo $b->jumlah_halaman?>" required>
+                    <input type="text" class="form-control" name="jumlah_halaman" id="exampleInputNim" placeholder="<?php echo $b->jumlah_halaman?>" required>
            </div>
 
            <div class="mb-4">
                     <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" > Keterangan Buku</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan" required><?php echo $b->keterangan?></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan" placeholder="<?php echo $b->keterangan?>"></textarea>
            </div>
 
            <div class="mb-2">
@@ -201,11 +201,15 @@
           
         </div>
         <div class="modal-footer">
+       
         
           <button type="submit" class="btn btn-primary" onclick="return confirm('Konfirmasi Update Buku?');">Perbaharui Data Buku</button>
-          <?php echo form_close(); ?>
-          
           </form>
+          <a href="<?php echo base_url("admin_halaman_buku/hapus/". $b->id_buku); ?>" method="post" style="color: white;"><button class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin, Akan Menghapus Data Buku?')">Hapus Data Buku</button>
+        </a>
+          
+          
+          
                 </div>
                 
             </div>

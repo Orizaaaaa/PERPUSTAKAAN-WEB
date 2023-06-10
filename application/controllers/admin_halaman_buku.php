@@ -129,11 +129,21 @@ public function hapus($id_buku)
 	$delete = $this->admin_buku_m->hapus_data($id_buku);
 
 	if ($delete) {
-		redirect('admin_halaman_buku');
-		echo "Gagal menghapus data";
+		$this->session->set_flashdata('notif',' <div class="row">
+      <div class="container">
+        <div class="col-md-6">
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Selamat!</strong> Data Buku Berhasil Dihapus !!!
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+        </div>
+    </div>');
+	redirect('admin_halaman_buku');
 	} else {
 		 echo "Gagal menghapus data";
 		// Tampilkan pesan error atau lakukan tindakan lain
+		redirect('admin_halaman_buku');
 	}
 }
 
