@@ -58,89 +58,96 @@
   <!-- Navbar End-->
 
   <!-- Hero 1 -->
-  <section class="container-hero-1 mt-5 mx-auto">
-    <div class="row d-flex align-items-center row-cols-lg-2 row-cols-1 ">
-      <div class="col mt-4 ">
-        <h2>New Releases This Week</h2>
-        <p class="w-100 mt-4">
-          The new releases this week offer a variety of literary adventures. Whether you're looking for an escape
-          into the world of fantasy, delving into thought-provoking topics, or exploring the history of IT, we have
-          something that will captivate every reader's interest.
-        </p>
-        <a href="<?php echo site_url('halaman_buku') ?>"> <button class="btn mt-4">Booking Now </button></a>
-      </div>
-      <div class="col">
-        <img src="<?php echo base_url();?>assets/Animation.svg" alt="" />
-      </div>
-    </div>
-  </section>
+  <?php  $no = 1; foreach($buku_terbaru as $bt){  ?>
+    <section class="container-hero-1 mt-5">
+        <div class="row">
+            <div class="col mt-4">
+                <h2><?php echo $bt->judul_buku_terbaru?></h2>
+                <p class="w-100 mt-4">
+                <?php echo $bt->caption_buku_terbaru?>
+                </p>
+                </a>
+            </div>
+            <div class="col">
+                <img src="<?php echo base_url();?>assets/buku_terbaru/<?php echo $bt->gambar_buku ?>" alt="" />
+            </div>
+        </div>
+    </section>
+    <?php } ?> 
   <!-- Hero 1 -->
 
   <!-- hero 2 -->
-  <section class="container-hero-2" id="rekomended">
+  <?php  $no = 1; foreach($rekomendasi_buku as $rb){  ?>
+    
+    <section class="container-hero-2" id="rekomended">
     <h4 class="fw-semibold ">Recomended For You </h4>
     <div class="caraosel d-flex ">
 
       <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_1 ?>">
         </div>
         <div class="caption-button ">
-          <h6>The Time Has Come</h6>
-          <p>Lindbergh's Pharmacy is an Athens...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <h6><?php echo $rb->judul_buku_1?></h6>
+          <p><?php echo $rb->keterangan_buku_1?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#pinjam1">
             Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo (1).svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_2 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>I Want a Catastsrope</h6>
-          <p>With global warming projected ...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_2?></h6>
+          <p><?php echo $rb->keterangan_buku_2?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#pinjam2">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/Product photo (2).svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_3 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>My Goverment</h6>
-          <p>Pharmacy is an Athens, institution...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_3?></h6>
+          <p><?php echo $rb->keterangan_buku_3?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#pinjam3">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/buku3.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_4 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>Forget a Mentor</h6>
-          <p>In this powerful yet practical and...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_4?></h6>
+          <p><?php echo $rb->keterangan_buku_4?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#pinjam4">
+            Choose
             Book</button>
         </div>
       </div>
 
-      <div class="buku1 d-flex mt-2 gap-3">
+      <div class="buku1 d-flex mt-2 gap-3 ">
         <div class="cover">
-          <img src="<?php echo base_url();?>assets/buku4.svg">
+          <img src="<?php echo base_url();?>assets/rekomendasi_buku/<?php echo $rb->gambar_buku_5 ?>">
         </div>
-        <div class="caption-button  ">
-          <h6>Pride and Protest</h6>
-          <p>A woman goes head-to-head CEO of...</p>
-          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"> Choose
+        <div class="caption-button ">
+          <h6><?php echo $rb->judul_buku_5?></h6>
+          <p><?php echo $rb->keterangan_buku_5?></p>
+          <button class="btn fw-semibold mt-2" data-bs-toggle="modal" data-bs-target="#pinjam5">
+            Choose
             Book</button>
         </div>
       </div>
+
 
 
     </div>
@@ -150,29 +157,319 @@
       </button>
     </div>
   </section>
+  <?php } ?>
   <!-- hero 2 end -->
 
-  <!-- Popup -->
-  <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Popup  Peminjaman Buku dari Rekomendasi Buku-->
+    <!-- Pop Up Rekomendasi 1 -->
+      <div class="modal fade" id="pinjam1" tabindex="-1" aria-labelledby="peminjaman1Label" aria-hidden="true">
+      
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <h2>Pinjam Buku</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="">
-            <label for="exampleDataList" class="form-label">Masukan data kamu </label>
-            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Masukan Nama">
-          </form>
+
+        <?php echo form_open_multipart('halaman_utama/pinjam_buku1') ?>
+          <form action="<?= base_url('halaman_utama/pinjam_buku1') ?>" method="post">
+          <div class="mb-2">
+          
+          
+                    <input type="number" class="form-control" name="id_history" id="exampleInputNim" required readonly hidden>
+                  </div>
+                  
+
+                   <!-- yang tidak di tampilkan di tampilan -->
+
+                  <div class="mb-2">
+                    <input type="text" class="form-control" name="status" id="exampleInputNim" required value="Belum Dikembalikan" readonly hidden>
+                  </div>
+
+                  <!-- End -->
+
+                  <div class="mb-2">
+                  <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                    <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                  </div>
+
+                  <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                  </div>
+
+                  
+
+                  <label for="exampleDataList" class="form-label">Judul Buku yang akan di pinjam  </label>
+                  <div class="mb-2">
+                    <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" value="<?php echo $rb->judul_buku_1?>" style="background-color: #f0ecec;" readonly required>
+                  </div>
+                  
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Confirm Book</button>
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Lanjutkan untuk Meminjam Buku...')">Confirm Book</button>
         </div>
+        <?php echo form_close(); ?>
+        </form>
+        
       </div>
+      
     </div>
   </div>
+  </div>
+  <!-- End Popup Rekomendasi 1 -->
+
+  <!-- Pop Up Rekomendasi 2 -->
+  <div class="modal fade" id="pinjam2" tabindex="-1" aria-labelledby="peminjaman1Label" aria-hidden="true">
+      
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Pinjam Buku</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+  
+          <?php echo form_open_multipart('halaman_utama/pinjam_buku2') ?>
+            <form action="<?= base_url('halaman_utama/pinjam_buku2') ?>" method="post">
+            <div class="mb-2">
+            
+            
+                      <input type="number" class="form-control" name="id_history" id="exampleInputNim" required readonly hidden>
+                    </div>
+                    
+  
+                     <!-- yang tidak di tampilkan di tampilan -->
+  
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="status" id="exampleInputNim" required value="Belum Dikembalikan" readonly hidden>
+                    </div>
+  
+                    <!-- End -->
+  
+                    <div class="mb-2">
+                    <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                      <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                    </div>
+  
+                    <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                    </div>
+  
+                    
+  
+                    <label for="exampleDataList" class="form-label">Judul Buku yang akan di pinjam  </label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" value="<?php echo $rb->judul_buku_2?>" style="background-color: #f0ecec;" readonly required>
+                    </div>
+                    
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Lanjutkan untuk Meminjam Buku...')">Confirm Book</button>
+          </div>
+          <?php echo form_close(); ?>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <!-- End Popup Rekomendasi 2 -->
+
+<!-- Pop Up Rekomendasi 3 -->
+<div class="modal fade" id="pinjam3" tabindex="-1" aria-labelledby="peminjaman1Label" aria-hidden="true">
+      
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Pinjam Buku</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+  
+          <?php echo form_open_multipart('halaman_utama/pinjam_buku3') ?>
+            <form action="<?= base_url('halaman_utama/pinjam_buku3') ?>" method="post">
+            <div class="mb-2">
+            
+            
+                      <input type="number" class="form-control" name="id_history" id="exampleInputNim" required readonly hidden>
+                    </div>
+                    
+  
+                     <!-- yang tidak di tampilkan di tampilan -->
+  
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="status" id="exampleInputNim" required value="Belum Dikembalikan" readonly hidden>
+                    </div>
+  
+                    <!-- End -->
+  
+                    <div class="mb-2">
+                    <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                      <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                    </div>
+  
+                    <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                    </div>
+  
+                    
+  
+                    <label for="exampleDataList" class="form-label">Judul Buku yang akan di pinjam  </label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" value="<?php echo $rb->judul_buku_3?>" style="background-color: #f0ecec;" readonly required>
+                    </div>
+                    
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Lanjutkan untuk Meminjam Buku...')">Confirm Book</button>
+          </div>
+          <?php echo form_close(); ?>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <!-- End Popup Rekomendasi 3 -->
+
+    <!-- Pop Up Rekomendasi 4 -->
+<div class="modal fade" id="pinjam4" tabindex="-1" aria-labelledby="peminjaman1Label" aria-hidden="true">
+      
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Pinjam Buku</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+  
+          <?php echo form_open_multipart('halaman_utama/pinjam_buku4') ?>
+            <form action="<?= base_url('halaman_utama/pinjam_buku4') ?>" method="post">
+            <div class="mb-2">
+            
+            
+                      <input type="number" class="form-control" name="id_history" id="exampleInputNim" required readonly hidden>
+                    </div>
+                    
+  
+                     <!-- yang tidak di tampilkan di tampilan -->
+  
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="status" id="exampleInputNim" required value="Belum Dikembalikan" readonly hidden>
+                    </div>
+  
+                    <!-- End -->
+  
+                    <div class="mb-2">
+                    <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                      <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                    </div>
+  
+                    <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                    </div>
+  
+                    
+  
+                    <label for="exampleDataList" class="form-label">Judul Buku yang akan di pinjam  </label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" value="<?php echo $rb->judul_buku_4?>" style="background-color: #f0ecec;" readonly required>
+                    </div>
+                    
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Lanjutkan untuk Meminjam Buku...')">Confirm Book</button>
+          </div>
+          <?php echo form_close(); ?>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <!-- End Popup Rekomendasi 4 -->
+
+    <!-- Pop Up Rekomendasi 5 -->
+    <div class="modal fade" id="pinjam5" tabindex="-1" aria-labelledby="peminjaman1Label" aria-hidden="true">
+      
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Pinjam Buku</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+  
+          <?php echo form_open_multipart('halaman_utama/pinjam_buku5') ?>
+            <form action="<?= base_url('halaman_utama/pinjam_buku5') ?>" method="post">
+            <div class="mb-2">
+            
+            
+                      <input type="number" class="form-control" name="id_history" id="exampleInputNim" required readonly hidden>
+                    </div>
+                    
+  
+                     <!-- yang tidak di tampilkan di tampilan -->
+  
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="status" id="exampleInputNim" required value="Belum Dikembalikan" readonly hidden>
+                    </div>
+  
+                    <!-- End -->
+  
+                    <div class="mb-2">
+                    <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                      <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                    </div>
+  
+                    <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                    </div>
+  
+                    
+  
+                    <label for="exampleDataList" class="form-label">Judul Buku yang akan di pinjam  </label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" value="<?php echo $rb->judul_buku_5?>" style="background-color: #f0ecec;" readonly required>
+                    </div>
+                    
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" onclick="return confirm('Lanjutkan untuk Meminjam Buku...')">Confirm Book</button>
+          </div>
+          <?php echo form_close(); ?>
+          </form>
+          
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <!-- End Popup Rekomendasi 5 -->
+  
+  
+  
+
+  
   <!--popup end  -->
 
   <!-- hero 3 -->
@@ -198,6 +495,7 @@
       </div>
     </div>
   </section>
+  
   <!-- hero 3 end-->
 
 

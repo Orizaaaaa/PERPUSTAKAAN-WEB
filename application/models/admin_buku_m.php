@@ -1,10 +1,10 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin_history_m extends CI_Model{
+class admin_buku_m extends CI_Model{
 
 	function tampil_data(){
-		return $this->db->get('history');
+		return $this->db->get('buku');
 	}
 	function update_data($where,$data,$table){
 		$this->db->where($where);

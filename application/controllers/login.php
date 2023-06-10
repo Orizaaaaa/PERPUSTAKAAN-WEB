@@ -38,8 +38,15 @@ class login extends CI_Controller{
 				}
 			}
 		}else{
-			$this->session->set_flashdata('message_login_error', 'Login Gagal, pastikan username dan password benar!');
-		
+			$this->session->set_flashdata('error',' <div class="row">
+			<div class="container">
+				<div class="col-md-12">
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<strong>Login Gagal!!!</strong> Pastikan Username dan Password Benarl
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+				</div>
+		</div>');
 		}	redirect(base_url("login"));
 	}
 

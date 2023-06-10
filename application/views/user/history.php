@@ -47,38 +47,45 @@
         </div>
     </nav>
     <!-- Navbar End-->
-    <section class="history-peminjaman mt-5">    
+    <section class="history-peminjaman mt-5">    <br><br>
+    <center>
+     <?php echo $this->session->flashdata('notif') ?>
+  </center>
 
 
 <center>
     <h1>History Peminjaman</h1>
 </center>
-<?php  $no = 1; foreach($history as $h){  ?>
+
 <section class="history-peminjaman mt-5">
 
-    <table class="table table-dark table-striped">
-        <thead>
-            <tr>
-                <th scope="col">No</th>
-                <th scope="col">Judul Buku</th>
-                <th scope="col">Dipinjam Pada Tanggal</th>
-                <th scope="col">Dikembalikan Pada Tanggal</th>
-                <th scope="col">Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row"><?php echo $h->no?></th>
-                <td><?php echo $h->judul_buku?></td>
-                <td><?php echo $h->dipinjam_pada_tanggal?></td>
-                <td><?php echo $h->dikembalikan_pada_tanggal?></td>
-                <td><?php echo $h->status?></td>
+<table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Judul Buku</th>
+                    <th scope="col">Nama Peminjam</th>
+                    <th scope="col">Dipinjam Pada Tanggal</th>
+                    <th scope="col">Dikembalikan Pada Tanggal</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php  $no = 1; foreach($history as $h){  ?>
+                <tr>
+                    <td scope="row" style="padding-top: 1%;"><?php echo $h->id_history?></th>
+                    <td style="padding-top: 1%;"><?php echo $h->judul_buku?></td>
+                    <td style="padding-top: 1%;"><?php echo $h->nama_peminjam?></td>
+                    <td style="padding-top: 1%;"><?php echo $h->dipinjam_pada_tanggal?></td>
+                    <td style="padding-top: 1%;"><?php echo $h->dikembalikan_pada_tanggal?></td>
+                    <td style="padding-top: 1%;"><?php echo $h->status?></td>
             </tr>
         </tbody>
+        <?php } ?>
     </table>
 
 </section>
-<?php } ?> 
+ 
 
     <!-- popup modal  -->
 

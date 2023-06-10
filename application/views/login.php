@@ -25,23 +25,11 @@
     <div class="card login-form">
       <div class="card-body ">
         <center>
-      <?php 
-				if($this->session->flashdata('error') !='')
-				{
-					echo '<div class="alert alert-danger" role="alert">';
-					echo $this->session->flashdata('error');
-					echo '</div>';
-				}
-				?>
+     
+				<?php echo $this->session->flashdata('error') ?>
+				
  
-				<?php 
-				if($this->session->flashdata('success_register') !='')
-				{
-					echo '<div class="alert alert-success alert-dismissible fade show" role="alert">';
-					echo $this->session->flashdata('success_register');
-					echo '</div>';
-				}
-				?>
+				<?php echo $this->session->flashdata('success_register')?>
         
          <?php 
          if($this->session->flashdata('message_login_error') !='')

@@ -65,48 +65,15 @@
                 </button>
                 </center>
 
-
+            <?php  $no = 1; foreach($buku as $b){  ?>
             <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 g-4 mt-5 ">
                 <div class="col " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Dilan_ Dia Adalah Dilanku Tahun 1990.jpeg " alt="" srcset=""
+                    <img src="<?php echo base_url();?>assets/buku/<?php echo $b->gambar_buku ?>"
                         class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Dilan 1990</h5>
-                    <p>Dia adalah dilanku tahun 1990</p>
+                    <h5 class="fw-bold"><?php echo $b->judul_buku?></h5>
+                    <p><?php echo $b->caption_buku?></p>
                 </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Milea_ Suara dari Dilan.jpeg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Milea Suara Dari Dilan</h5>
-                    <p>Perpisahan adalah upara menyambut hari hari penuh rindu</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/filosoi teras.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Filosofi Teras</h5>
-                    <p>Filsafat yunani untuk mental tanggguh masa kini</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Jalan-Pintas-Menjadi-Master-Reactjs.jpg" alt="" srcset=""
-                        class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">React.js</h5>
-                    <p>Jalan pintas menjadi master React.js</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Uncle Bob's Clean Code_ Irrelevant in the Age of Full-Stack JavaScript_.jpeg"
-                        alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Clean Code</h5>
-                    <p>A handbook of agile software craftsmanship</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/musa.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Nabi Musa AS</h5>
-                    <p>Membebaskan Bani Israil dan Tenggelamnya Firaun yang Sombong</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/A-Z_KONSELING_KRISTEN.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">A-Z Konseling kristen</h5>
-                    <p>konseling merupakan pelayanan yang tidak pernah hilang</p>
-                </div>
-            </div>
-        </div>
+                <?php } ?>
 
 
     </section>

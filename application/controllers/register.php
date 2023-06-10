@@ -29,7 +29,15 @@ class Register extends CI_Controller {
             $level = $this->input->post('level');
 			
 			$this->auth->register($email,$username,$password,$level);
-			$this->session->set_flashdata('success_register','Proses Pendaftaran User Berhasil Silahkan Login');
+			$this->session->set_flashdata('success_register',' <div class="row">
+			<div class="container">
+				<div class="col-md-12">
+				<div class="alert alert-success alert-dismissible fade show" role="alert">
+				<strong>Akun berhasil di buat!</strong> Silahkan Login
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+				</div>
+		</div>');
 			redirect('login');
 		}
 		else
