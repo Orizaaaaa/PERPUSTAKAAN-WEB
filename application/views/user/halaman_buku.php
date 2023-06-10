@@ -60,45 +60,114 @@
                 placeholder="Search Book...">
 
 
-            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 g-4 mt-5 ">
-                <div class="col " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Dilan_ Dia Adalah Dilanku Tahun 1990.jpeg " alt="" srcset=""
-                        class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Dilan 1990</h5>
-                    <p>Dia adalah dilanku tahun 1990</p>
+                <div class="row row-cols-lg-4 row-cols-md-3 row-cols-2 g-4 mt-5 ">
+            <?php  $no = 1; foreach($buku as $b){  ?>
+                <div class="col " data-bs-toggle="modal" data-bs-target="#popup<?php echo $b->id_buku ?>">
+                <img src="<?php echo base_url();?>assets/buku/<?php echo $b->gambar_buku ?>" alt=""class=" mb-3 rounded-3">
+                    <h5 class="fw-bold"><?php echo $b->judul_buku?></h5>
+                    <p><?php echo $b->caption_buku?></p>
                 </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Milea_ Suara dari Dilan.jpeg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Milea Suara Dari Dilan</h5>
-                    <p>Perpisahan adalah upara menyambut hari hari penuh rindu</p>
+                <!-- Popup edit-->
+    <div class="modal fade " id="popup<?php echo $b->id_buku ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5"> Peminjaman Buku <b><?php echo $b->judul_buku ?></b></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/filosoi teras.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Filosofi Teras</h5>
-                    <p>Filsafat yunani untuk mental tanggguh masa kini</p>
+                <div class="modal-body">
+                    
+                <?php echo form_open_multipart('halaman_buku/pinjam_buku') ?>
+                <form action="<?php echo base_url('halaman_buku/pinjam_buku'); ?>" method="post">
+                
+               <!-- Hanya DI Tampilkan -->
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Judul Buku</label>
+                    <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" placeholder="<?php echo $b->judul_buku?>" style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Caption Buku</label>
+                    <input type="text" class="form-control" name="caption_buku" id="exampleInputNim" style="background-color: #f0ecec;" placeholder="<?php echo $b->caption_buku?>"style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" > Penulis Buku</label>
+                    <input type="text" class="form-control" name="penulis_buku" id="exampleInputNim" style="background-color: #f0ecec;" placeholder="<?php echo $b->penulis_buku?>"style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" > Tahun Terbit</label>
+                    <input type="number" class="form-control" name="tahun_terbit" id="exampleInputNim" placeholder="<?php echo $b->tahun_terbit?>"style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" >Penerbit</label>
+                    <input type="text" class="form-control" name="penerbit" id="exampleInputNim"  placeholder="<?php echo $b->penerbit?>"style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-2">
+           <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" > Jumlah Halaman</label>
+                    <input type="number" class="form-control" name="jumlah_halaman" id="exampleInputNim" placeholder="<?php echo $b->jumlah_halaman?>"style="background-color: #f0ecec;" readonly>
+           </div>
+
+           <div class="mb-4">
+                    <label for="exampleInputNim" class="form-label" style="padding-right: 40%;" > Keterangan Buku</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="keterangan" style="background-color: #f0ecec;" readonly><?php echo $b->keterangan?></textarea>
+           </div>
+
+           <!-- End Hanya Ditampilkan -->
+
+           
+
+            <hr>
+            <center>
+           <small>*Untuk Meminjam Buku Mohon Inputkan</small>
+           </center> <br>
+            <!-- Pinjam Buku -->
+            <div class="mb-2">
+                      <input type="number" class="form-control" name="id_history" id="exampleInputNim"  readonly hidden>
+                    </div>
+
+                    <div class="mb-2">
+                    <input type="text" class="form-control" name="judul_buku" id="exampleInputNim" placeholder="<?php echo $b->judul_buku?>" style="background-color: #f0ecec;" value="<?php echo $b->judul_buku?>" readonly hidden>
+           </div>
+           
+           
+
+           <div class="mb-4">
+                    <label for="exampleInputdate" class="form-label">Masukan Tanggal Peminjaman </label>
+                      <input type="date" class="form-control" name="dipinjam_pada_tanggal" id="exampleInputdate" required  >
+                    </div>
+  
+                    <label for="exampleDataList" class="form-label">Masukan Nama Peminjam</label>
+                    <div class="mb-2">
+                      <input type="text" class="form-control" name="nama_peminjam" id="exampleInputNim" required>
+                    </div>
+
+           <div class="mb-2">
+                      <input type="text" class="form-control" name="status" id="exampleInputNim"  value="Belum Dikembalikan" readonly hidden>
+                    </div>
+
+           <!--Akhir  Pinjam Buku -->
+        </div>
+        <div class="modal-footer">
+        
+          <button type="submit" class="btn btn-primary" onclick="return confirm('Konfirmasi Untuk Meminjam Buku?');">Pinjam Buku</button>
+          <?php echo form_close(); ?>
+          
+          </form>
                 </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Jalan-Pintas-Menjadi-Master-Reactjs.jpg" alt="" srcset=""
-                        class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">React.js</h5>
-                    <p>Jalan pintas menjadi master React.js</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/Uncle Bob's Clean Code_ Irrelevant in the Age of Full-Stack JavaScript_.jpeg"
-                        alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Clean Code</h5>
-                    <p>A handbook of agile software craftsmanship</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/musa.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">Nabi Musa AS</h5>
-                    <p>Membebaskan Bani Israil dan Tenggelamnya Firaun yang Sombong</p>
-                </div>
-                <div class="col" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <img src="<?php echo base_url();?>assets/A-Z_KONSELING_KRISTEN.jpg" alt="" srcset="" class="  mb-3 rounded-3">
-                    <h5 class="fw-bold">A-Z Konseling kristen</h5>
-                    <p>konseling merupakan pelayanan yang tidak pernah hilang</p>
-                </div>
+                
+            </div>
+            
+        </div>
+        
+        </div>
+
+                <?php } ?>
+                
             </div>
         </div>
 

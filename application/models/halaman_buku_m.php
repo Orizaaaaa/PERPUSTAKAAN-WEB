@@ -1,7 +1,7 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class admin_buku_m extends CI_Model{
+class halaman_buku_m extends CI_Model{
 
 	function tampil_data(){
 		return $this->db->get('buku');
