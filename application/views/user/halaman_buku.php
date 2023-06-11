@@ -225,7 +225,9 @@
             });
         });
     </script>
-
+    <!-- search.js -->
+ <script src="<?php echo base_url();?>assets/js/search.js"></script> 
+    <!-- bootsrap js -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 

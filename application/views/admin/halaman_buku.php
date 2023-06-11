@@ -251,6 +251,8 @@
         });
     </script>
 
+<script src="<?php echo base_url();?>assets/js/search.js"></script>
+
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
